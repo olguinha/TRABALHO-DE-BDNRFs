@@ -7,13 +7,13 @@ export interface Curso {
   nomecurso: String;
   descricao: String;
   carga_horaria_total: Date;
-  disciplinas:String;
+  disciplinas:  String;
 }
 @Injectable({
 providedIn: 'root'
 })
 export class CursoService {
-private apiUrl = 'http://localhost:3000/alunos';
+private apiUrl = 'http://localhost:3000/cursos';
 constructor(private http: HttpClient) {}
 getCursos(): Observable<Curso[]> {
  return this.http.get<Curso[]>(this.apiUrl);
