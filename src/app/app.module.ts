@@ -1,10 +1,11 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule, provideClientHydration } from '@angular/platform-browser';
+import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
-import { ListaAlunoComponent } from './components/lista-aluno/lista-aluno.component';
 import { CadastroAlunoComponent } from './components/cadastro-aluno/cadastro-aluno.component';
 import { EditarAlunoComponent } from './components/editar-aluno/editar-aluno.component';
 import { ListaCursosComponent } from './components1/lista-cursos/lista-cursos.component';
@@ -13,11 +14,11 @@ import { EditarCursosComponent } from './components1/editar-cursos/editar-cursos
 import { ListaDisciplinasComponent } from './components2/lista-disciplinas/lista-disciplinas.component';
 import { CadastroDisciplinasComponent } from './components2/cadastro-disciplinas/cadastro-disciplinas.component';
 import { EditarDisciplinasComponent } from './components2/editar-disciplinas/editar-disciplinas.component';
+import { ListaAlunoComponent } from './components/lista-aluno/lista-aluno.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    ListaAlunoComponent,
     CadastroAlunoComponent,
     EditarAlunoComponent,
     ListaCursosComponent,
@@ -25,11 +26,14 @@ import { EditarDisciplinasComponent } from './components2/editar-disciplinas/edi
     EditarCursosComponent,
     ListaDisciplinasComponent,
     CadastroDisciplinasComponent,
-    EditarDisciplinasComponent
+    EditarDisciplinasComponent,
+    ListaAlunoComponent,
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule,
+    HttpClientModule
   ],
   providers: [
     provideClientHydration(),
