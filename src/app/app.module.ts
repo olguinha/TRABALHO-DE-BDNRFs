@@ -16,13 +16,14 @@ import { CadastroDisciplinasComponent } from './components2/cadastro-disciplinas
 import { EditarDisciplinasComponent } from './components2/editar-disciplinas/editar-disciplinas.component';
 import { ListaAlunoComponent } from './components/lista-aluno/lista-aluno.component';
 
+
 @NgModule({
   declarations: [
     AppComponent,
     CadastroAlunoComponent,
     EditarAlunoComponent,
     ListaCursosComponent,
-    CadastroCursosComponent,
+    //CadastroCursosComponent,
     EditarCursosComponent,
     ListaDisciplinasComponent,
     CadastroDisciplinasComponent,

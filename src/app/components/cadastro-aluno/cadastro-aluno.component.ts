@@ -7,14 +7,18 @@ templateUrl: './cadastro-aluno.component.html',
 styleUrls: ['./cadastro-aluno.component.css']
 })
 export class CadastroAlunoComponent {
-aluno: Aluno = { codaluno: '', nomealuno: '', curso: '', sexo: '' };
+
 
 constructor(private alunoService: AlunoService) {}
 
+
+Aluno: Aluno = { codaluno: '', nomealuno: '', curso: '', sexo: ''};
+AlunoService: any;
+
 salvar() {
-    this.alunoService.createAluno(this.aluno).subscribe((res) => {
+    this.alunoService.createAluno(this.Aluno).subscribe((res) => {
       console.log('Aluno cadastrado:', res);
-      this.aluno = { codaluno: '', nomealuno: '', curso: '', sexo: '' };
+      this.Aluno= { codaluno: '', nomealuno: '', curso: '', sexo: '' };
     });
 }
 } 

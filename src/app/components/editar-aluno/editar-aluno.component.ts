@@ -17,12 +17,11 @@ export class EditarAlunoComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    // Obtém o código do aluno da rota e carrega os dados do aluno
     const codaluno = this.route.snapshot.paramMap.get('codaluno');
     if (codaluno) {
       this.alunoService.getAluno(codaluno).subscribe(
         (res) => {
-          this.aluno = res;
+          this.Aluno = res;
         },
         (error) => {
           console.error('Erro ao carregar aluno:', error);
@@ -36,7 +35,7 @@ export class EditarAlunoComponent implements OnInit {
       (res) => {
         console.log('Aluno atualizado com sucesso:', res);
         alert('Aluno atualizado com sucesso!');
-        this.router.navigate(['/alunos']); // Redireciona para a lista de alunos após a atualização
+        this.router.navigate(['/alunos']); 
       },
       (error) => {
         console.error('Erro ao atualizar aluno:', error);

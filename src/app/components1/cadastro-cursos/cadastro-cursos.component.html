@@ -1,13 +1,1 @@
-<h2>Cadastrar Curso</h2>
-<form (ngSubmit)="salvar()">
-  <label for="codcurso">Código do Curso:</label>
-  <input id="codcurso" [(ngModel)]="curso.codcurso" name="codcurso" required />
 
-  <label for="nomecurso">Nome do Curso:</label>
-  <input id="nomecurso" [(ngModel)]="curso.nomecurso" name="nomecurso" required />
-
-  <label for="duracao">Duração (em horas):</label>
-  <input id="duracao" type="number" [(ngModel)]="curso.duracao" name="duracao" required />
-
-  <button type="submit">Salvar</button>
-</form>

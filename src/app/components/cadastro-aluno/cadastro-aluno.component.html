@@ -1,20 +1,21 @@
 <h2>Cadastrar Aluno</h2>
+
 <form (ngSubmit)="salvar()">
 <label for="codaluno">Código:</label>
-<input id="codaluno" [(ngModel)]='aluno.codaluno' name="codaluno"
+<input id="codaluno" [(ngModel)]='Aluno.codaluno' name="codaluno"
 required />
 
 <label for="nomealuno">Nome:</label>
-<input id="nomealuno" [(ngModel)]='aluno.nomealuno' name="nomealuno"
+<input id="nomealuno" [(ngModel)]='Aluno.nomealuno' name="nomealuno"
 required />
 
 <label for="curso">Curso:</label>
-<input id="curso" [(ngModel)]='aluno.curso' name="curso" required />
+<input id="curso" [(ngModel)]='Aluno.curso' name="curso" required />
 
 <label for="sexo">Sexo:</label>
 <input id="sexo"
 
-[(ngModel)]="aluno.sexo" name="sexo" required />
+[(ngModel)]="Aluno.sexo" name="sexo" required />
 
 <button type="submit">Salvar</button>
 </form>

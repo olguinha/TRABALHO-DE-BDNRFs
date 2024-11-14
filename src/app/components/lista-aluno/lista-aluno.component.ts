@@ -11,17 +11,29 @@ export class ListaAlunoComponent {
   alunos: Aluno[] = [];
   constructor(private alunoService: AlunoService) {}
   ngOnInit(): void {
-   this.alunoService.getAlunos().subscribe((data) => {
+   this.alunoService.getAluno().subscribe((data) => {
    this.alunos = data;
    });
   }
-  excluir(id: string) {
-   this.alunoService.deleteAluno(id).subscribe(() => {
-   this.alunos = this.alunos.filter((aluno) => aluno._id !== id);
+  excluir(codaluno: string) {
+   this.alunoService.deleteAluno(codaluno).subscribe(() => {
+   this.alunos = this.alunos.filter((aluno) => aluno.codaluno !== codaluno);
    });
   }
+  
   editar(aluno: Aluno) {
-   // Lógica para editar
+    const alunoExistente = this.alunos.find(a => a.codaluno === aluno.codaluno);
+  
+  if (alunoExistente) {
+    
+    aluno.codaluno = aluno.codaluno;
+    aluno.curso = aluno.curso;
+    aluno.sexo = aluno.sexo;
+    
+    console.log(`Aluno atualizado: ${JSON.stringify(alunoExistente)}`);
+  } else {
+    console.log('Aluno não encontrado!');
+  }
   }
   }
   
