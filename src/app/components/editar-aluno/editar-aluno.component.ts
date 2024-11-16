@@ -8,7 +8,13 @@ import { AlunoService, Aluno } from '../../services/aluno.service';
   styleUrls: ['./editar-aluno.component.css']
 })
 export class EditarAlunoComponent implements OnInit {
-  aluno: Aluno = { codaluno: '', nomealuno: '', curso: '', sexo: '' };
+
+  aluno: Aluno = { 
+                   codaluno: '',
+                   nomealuno: '',
+                   curso: '',
+                   sexo: ''
+                   };
 
   constructor(
     private alunoService: AlunoService,
@@ -21,7 +27,7 @@ export class EditarAlunoComponent implements OnInit {
     if (codaluno) {
       this.alunoService.getAluno(codaluno).subscribe(
         (res) => {
-          this.Aluno = res;
+          this.aluno = res;
         },
         (error) => {
           console.error('Erro ao carregar aluno:', error);

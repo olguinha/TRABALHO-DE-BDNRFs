@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
-import { Curso } from '../../services/cursos.service';
-import { CursoService } from '../../services/cursos.service';
+import { NgModule } from '@angular/core';
+import { Curso, CursoService  } from '../../services/cursos.service';
+
 
 
 @Component({
@@ -11,13 +12,19 @@ import { CursoService } from '../../services/cursos.service';
 
 export class  CadastrocursosComponent  {
 
-  Curso: Curso = { codcurso: '', nomecurso: '',  descricao: '', cargaS: '', disciplinas: ''};
-  CursoService: any;
+   Curso: Curso = { codcurso: '', nomecurso: '', descricao: '', cargaS: '', disciplinas: '' };
 
-  salvar() {
-    this.CursoService.createCurso (this.Curso).subscribe((res: any) => {
-    console.log('Aluno cadastrado:', res);
-    this.Curso = { codcurso: '', nomecurso: '', descricao: '', cargaS: '', disciplinas: ''};
-    });
+   constructor(private cursoService: CursoService) {} 
+ 
+   salvar() {
+     this.cursoService.createCurso(this.Curso).subscribe(
+       (res: any) => {
+         console.log('Curso cadastrado:', res);
+         this.Curso = { codcurso: '', nomecurso: '', descricao: '', cargaS: '', disciplinas: '' };
+       },
+       (error: any) => {
+         console.error('Erro ao salvar o curso:', error);
+       }
+     );
    }
 }

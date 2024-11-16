@@ -1,37 +1,37 @@
 <h2>Editar Aluno</h2>
 <form (ngSubmit)="atualizar()">
   <label for="codaluno">Código:</label>
-  <input
-    id="codaluno"
-    [(ngModel)]="aluno.codaluno"
-    name="codaluno"
-    required
-    readonly
-  />
+      <input
+        id="codaluno"
+        [(ngModel)]="aluno.codaluno"
+        name="codaluno"
+        required
+        readonly
+      />
 
   <label for="nomealuno">Nome:</label>
-  <input
-    id="nomealuno"
-    [(ngModel)]="aluno.nomealuno"
-    name="nomealuno"
-    required
-  />
+      <input
+        id="nomealuno"
+        [(ngModel)]="aluno.nomealuno"
+        name="nomealuno"
+        required
+      />
 
   <label for="curso">Curso:</label>
-  <input
-    id="curso"
-    [(ngModel)]="aluno.curso"
-    name="curso"
-    required
-  />
+      <input
+        id="curso"
+        [(ngModel)]="aluno.curso"
+        name="curso"
+        required
+      />
 
   <label for="sexo">Sexo:</label>
-  <input
-    id="sexo"
-    [(ngModel)]="aluno.sexo"
-    name="sexo"
-    required
-  />
+      <input
+        id="sexo"
+        [(ngModel)]="aluno.sexo"
+        name="sexo"
+        required
+      />
 
-  <button type="submit">Atualizar</button>
+   <button type="submit">Atualizar</button>
 </form>
