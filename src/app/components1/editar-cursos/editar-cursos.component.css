@@ -1,4 +1,4 @@
-/* Estilos para o formulário de edição de curso */
+
 form {
   width: 300px;
   margin: 0 auto;
@@ -69,7 +69,7 @@ button:focus {
   box-shadow: 0 0 4px rgba(45, 125, 193, 0.5);
 }
 
-/* Espaço entre o campo de disciplinas e o botão */
+
 .button-spacing {
-  margin-bottom: 20px; /* Ajuste a distância conforme necessário */
+  margin-bottom: 20px; 
 }

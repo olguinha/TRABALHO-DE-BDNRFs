@@ -1,0 +1,22 @@
+<h2>Cadastrar Aluno</h2>
+
+<form (ngSubmit)="salvar()">
+<label for="codaluno">Código:</label>
+<input id="codaluno" [(ngModel)]='Disciplina.coddisciplina' name="coddisciplina"
+required />
+
+<label for="nomealuno">Nome:</label>
+<input id="nomealuno" [(ngModel)]='Disciplina.nomedisciplina' name="nomealuno"
+required />
+
+<label for="curso">Curso:</label>
+<input id="curso" [(ngModel)]='Disciplina.ementa' name="curso" required />
+
+<label for="curso">Curso:</label>
+<input id="curso" [(ngModel)]='Disciplina.Carga_horaria' name="curso" required />
+
+<label for="curso">Curso:</label>
+<input id="curso" [(ngModel)]='Disciplina.professores' name="curso" required />
+
+<button type="submit">Salvar</button>
+</form>

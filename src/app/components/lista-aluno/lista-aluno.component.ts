@@ -5,7 +5,7 @@ import { ActivatedRoute } from '@angular/router';
 @Component({
   selector: 'app-lista-aluno',
   templateUrl: './lista-aluno.component.html',
-  styleUrls: ['./lista-aluno.component.css'] // Corrigido o nome para 'styleUrls'
+  styleUrls: ['./lista-aluno.component.css']
 })
 export class ListaAlunoComponent implements OnInit {
   aluno: Aluno = {

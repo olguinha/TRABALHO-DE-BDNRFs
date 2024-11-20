@@ -1,0 +1,25 @@
+<h2>Lista de Alunos</h2>
+<table>
+        <thead>
+        <tr>
+        <th>Código</th>
+        <th>Nome</th>
+        <th>Descrição</th>
+        <th>Cargas Horaria</th>
+        <th>Data</th>
+        </tr>
+        </thead>
+ <tbody>
+    <table>
+        <tr *ngFor="let aluno"> 
+          <td>{{ Curso.codcurso }}</td>
+          <td>{{ Curso.nomecurso }}</td>
+          <td>{{ Curso.descricao }}</td>
+          <td>{{ Curso.cargaS }}</td>
+          <td>{{ Curso.cargaS }}</td>
+        </tr>
+      </table>
+    <button (click)="editar(Curso)">Editar</button>
+    <button (click)="excluir('Curso._id')">Excluir</button>
+ </tbody>
+</table>

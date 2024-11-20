@@ -5,7 +5,7 @@ export interface Disciplina {
   coddisciplina: String,
   nomedisciplina: String,
   ementa: String,
-  Carga_horaria: Date,
+  Carga_horaria: string,
   professores: String
 
 }
@@ -19,8 +19,8 @@ export class DisciplinasService {
 
   constructor(private http: HttpClient) {}
 
-  getDisciplinas(): Observable<Disciplina[]> {
-  return this.http.get<[]>(this.apiUrl);
+  getDisciplinas(coddisciplina: string): Observable<Disciplina> {
+    return this.http.get<Disciplina>(`URL_DA_API/${coddisciplina}`);
   }
 
   createDisciplinas(disciplinas: Disciplina): Observable<Disciplina> {

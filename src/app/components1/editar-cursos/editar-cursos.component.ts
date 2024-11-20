@@ -9,7 +9,7 @@ import { Curso, CursoService } from '../../services/cursos.service';
 })
 export class EditarCursosComponent implements OnInit {
 
- /* curso: Curso = {
+  Curso: Curso = {
     codcurso: '',
     nomecurso: '',
     descricao: '',
@@ -20,7 +20,7 @@ export class EditarCursosComponent implements OnInit {
   constructor(
     private CursoService: CursoService,
     private route: ActivatedRoute,
-    private router: Router
+    private router: Router,
   ) {}
 
   ngOnInit(): void {
@@ -28,7 +28,7 @@ export class EditarCursosComponent implements OnInit {
     if (codcurso) {
       this.CursoService.getCursos(codcurso).subscribe(
         (res) => {
-          this.curso = res;
+          this.Curso = res [0];
         },
         (error) => {
           console.error('Erro ao carregar cursos:', error);
@@ -38,7 +38,7 @@ export class EditarCursosComponent implements OnInit {
   }
 
   atualizar(): void {
-    this.CursoService.updateCurso(this.curso).subscribe(
+    this.CursoService.updateCurso(this.Curso).subscribe(
       (res) => {
         console.log('Curso atualizado com sucesso:', res);
         alert('Curso atualizado com sucesso!');
@@ -49,8 +49,8 @@ export class EditarCursosComponent implements OnInit {
         alert('Ocorreu um erro ao atualizar o curso.');
       }
     );
-    */
+    
   }
 
-
+}
 

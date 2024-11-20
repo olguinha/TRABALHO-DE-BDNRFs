@@ -1,1 +1,52 @@
+<h2>Editar Aluno</h2>
+<form (ngSubmit)="atualizar()">
+  <label for="codaluno">Código:</label>
+      <input
+        id="codaluno"
+        [(ngModel)]="Disciplina.coddisciplina"
+        name="codaluno"
+        required
+        readonly
+      />
+
+    coddisciplina: '',
+    nomedisciplina: '',
+    ementa: '',
+    Carga_horaria: '',
+    professores: '',
+
+  <label for="nomealuno">Nome:</label>
+      <input
+        id="nomealuno"
+        [(ngModel)]="Disciplina.nomedisciplina"
+        name="nomealuno"
+        required
+      />
+
+  <label for="curso">Curso:</label>
+      <input
+        id="curso"
+        [(ngModel)]="Disciplina.ementa"
+        name="curso"
+        required
+      />
+
+  <label for="sexo">Sexo:</label>
+      <input
+        id="sexo"
+        [(ngModel)]="Disciplina.Carga_horaria"
+        name="sexo"
+        required
+      />
+
+      <label for="sexo">Sexo:</label>
+      <input
+        id="sexo"
+        [(ngModel)]="Disciplina.professores"
+        name="sexo"
+        required
+      />
+
+   <button type="submit">Atualizar</button>
+</form>
 

@@ -1,26 +1,26 @@
-<h2>Editar Aluno</h2>
+<h2>Editar Cursos</h2>
 <form (ngSubmit)="atualizar()">
-  <label for="codaluno">Código:</label>
+  <label for="codcurso">Código:</label>
       <input
         id="codaluno"
-        [(ngModel)]="curso.codcurso"
+        [(ngModel)]="Curso.codcurso"
         name="codaluno"
         required
         readonly
       />
 
-  <label for="nomealuno">Nome:</label>
+  <label for="nome curso">Nome do Curso</label>
       <input
         id="nomealuno"
-        [(ngModel)]="curso.nomecurso"
+        [(ngModel)]="Curso.nomecurso"
         name="nomealuno"
         required
       />
 
-  <label for="curso">Curso:</label>
+  <label for="curso">Descricao</label>
       <input
         id="curso"
-        [(ngModel)]="curso.descricao"
+        [(ngModel)]="Curso.descricao"
         name="curso"
         required
       />
@@ -28,7 +28,7 @@
   <label for="sexo">Sexo:</label>
       <input
         id="sexo"
-        [(ngModel)]="curso.cargaS"
+        [(ngModel)]="Curso.cargaS"
         name="sexo"
         required
       />
@@ -37,7 +37,7 @@
       <label for="sexo">Sexo:</label>
       <input
         id="sexo"
-        [(ngModel)]="curso.disciplinas"
+        [(ngModel)]="Curso.disciplinas"
         name="sexo"
         required
       />
