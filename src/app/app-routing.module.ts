@@ -14,7 +14,7 @@ import { EditarDisciplinasComponent } from './components2/editar-disciplinas/edi
 
 const routes: Routes = [
   // Rota Principal
-  
+
   { path: '', component: MenuPrincipalComponent },
 
   // Rotas dos alunos
@@ -29,7 +29,7 @@ const routes: Routes = [
 
   // Rotas das disciplinas
   { path: 'cadastrodisciplina', component: CadastroDisciplinasComponent },
-  { path: 'editadisciplina', component: EditarDisciplinasComponent },  // Corrigido o componente aqui
+  { path: 'editadisciplina', component: EditarDisciplinasComponent },
   { path: 'listadisciplina', component: ListaDisciplinasComponent },
 ];
 

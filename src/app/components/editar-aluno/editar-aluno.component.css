@@ -52,6 +52,7 @@ button {
   border-radius: 4px;
   cursor: pointer;
   transition: background-color 0.3s ease;
+  margin-top: 20px; /* Adicionado para afastar do campo anterior */
 }
 
 button:hover {

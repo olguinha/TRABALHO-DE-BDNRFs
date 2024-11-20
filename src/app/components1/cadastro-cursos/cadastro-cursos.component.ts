@@ -1,5 +1,5 @@
-import { Component } from '@angular/core';
-import { NgModule } from '@angular/core';
+import { Component, NgModule } from '@angular/core';
+
 import { Curso, CursoService  } from '../../services/cursos.service';
 
 
@@ -14,8 +14,8 @@ export class  CadastrocursosComponent  {
 
    Curso: Curso = { codcurso: '', nomecurso: '', descricao: '', cargaS: '', disciplinas: '' };
 
-   constructor(private cursoService: CursoService) {} 
- 
+   constructor(private cursoService: CursoService) {}
+
    salvar() {
      this.cursoService.createCurso(this.Curso).subscribe(
        (res: any) => {

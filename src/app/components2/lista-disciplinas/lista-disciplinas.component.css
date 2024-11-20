@@ -1,0 +1,46 @@
+/* Estilos para a lista de disciplinas */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+  font-family: Arial, sans-serif;
+}
+
+thead {
+  background-color: #f7f7f7;
+}
+
+th, td {
+  padding: 10px;
+  text-align: left;
+  border: 1px solid #ddd;
+}
+
+th {
+  background-color: #5a67d8;
+  color: white;
+}
+
+td {
+  background-color: #fff;
+}
+
+button {
+  padding: 6px 12px;
+  margin-right: 5px;
+  font-size: 14px;
+  background-color: #2d7dc1;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #1e5a8d;
+}
+
+button:active {
+  background-color: #184a73;
+}

@@ -1,1 +1,47 @@
-<p>editar-cursos works!</p>
+<h2>Editar Aluno</h2>
+<form (ngSubmit)="atualizar()">
+  <label for="codaluno">Código:</label>
+      <input
+        id="codaluno"
+        [(ngModel)]="curso.codcurso"
+        name="codaluno"
+        required
+        readonly
+      />
+
+  <label for="nomealuno">Nome:</label>
+      <input
+        id="nomealuno"
+        [(ngModel)]="curso.nomecurso"
+        name="nomealuno"
+        required
+      />
+
+  <label for="curso">Curso:</label>
+      <input
+        id="curso"
+        [(ngModel)]="curso.descricao"
+        name="curso"
+        required
+      />
+
+  <label for="sexo">Sexo:</label>
+      <input
+        id="sexo"
+        [(ngModel)]="curso.cargaS"
+        name="sexo"
+        required
+      />
+
+
+      <label for="sexo">Sexo:</label>
+      <input
+        id="sexo"
+        [(ngModel)]="curso.disciplinas"
+        name="sexo"
+        required
+      />
+
+   <button type="submit">Atualizar</button>
+</form>
+
