@@ -41,6 +41,11 @@ input[readonly] {
   cursor: not-allowed;
 }
 
+/* Espaço entre o campo 'disciplinas' e o botão 'Salvar' */
+#disciplinas {
+  margin-bottom: 30px; /* Ajuste o valor conforme necessário */
+}
+
 button {
   width: 100%;
   padding: 10px;
@@ -67,9 +72,4 @@ button:focus {
   outline: none;
   border-color: #2d7dc1;
   box-shadow: 0 0 4px rgba(45, 125, 193, 0.5);
-}
-
-/* Espaço entre o campo de disciplinas e o botão */
-.button-spacing {
-  margin-bottom: 50px; /* Ajuste a distância conforme necessário */
 }

@@ -34,9 +34,8 @@ input[type="submit"] {
   font-size: 14px;
 }
 
-/* Garantir o espaçamento entre o campo 'Professor' e o botão 'Salvar' */
-input[type="text"]:nth-of-type(3) {  /* Supondo que o campo Professor seja o 3º campo */
-  margin-bottom: 30px;  /* Ajuste o valor conforme necessário */
+#professores {
+  margin-bottom: 20px; /* Espaço entre o campo 'Professores' e o botão 'Salvar' */
 }
 
 button {

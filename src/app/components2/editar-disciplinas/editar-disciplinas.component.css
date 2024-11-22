@@ -41,6 +41,11 @@ input[readonly] {
   cursor: not-allowed;
 }
 
+/* Espaço entre o campo 'Professores' e o botão 'Atualizar' */
+#Professores {
+  margin-bottom: 20px; /* Ajuste este valor para o espaço desejado */
+}
+
 button {
   width: 100%;
   padding: 10px;
