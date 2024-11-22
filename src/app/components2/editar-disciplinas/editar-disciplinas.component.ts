@@ -29,7 +29,7 @@ export class EditarDisciplinasComponent implements OnInit {
     if (coddisciplina) {
       this.DisciplinasService.getDisciplinas(coddisciplina).subscribe(
         (res) => {
-          this.Disciplina = res [0];
+          this.Disciplina = Array.isArray(res) ? res[0] : res;
         },
         (error) => {
           console.error('Erro ao carregar disciplina:', error);
@@ -43,7 +43,7 @@ export class EditarDisciplinasComponent implements OnInit {
       (res) => {
         console.log('disciplina atualizado com sucesso:', res);
         alert('disciplina atualizado com sucesso!');
-        this.router.navigate(['/disciplina']); 
+        this.router.navigate(['/disciplina']);
       },
       (error) => {
         console.error('Erro ao atualizar disciplina:', error);
