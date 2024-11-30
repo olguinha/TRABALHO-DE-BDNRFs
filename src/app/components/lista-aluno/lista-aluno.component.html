@@ -1,24 +1,24 @@
 <h2>Lista de Alunos</h2>
 <table>
-        <thead>
-        <tr>
-        <th>Código</th>
-        <th>Nome</th>
-        <th>Curso</th>
-        <th>Sexo</th>
-        <th>Ações</th>
-        </tr>
-        </thead>
- <tbody>
-    <table>
-        <tr *ngFor="let aluno"> 
-          <td>{{ aluno.codaluno }}</td>
-          <td>{{ aluno.nomealuno }}</td>
-          <td>{{ aluno.curso }}</td>
-          <td>{{ aluno.sexo }}</td>
-        </tr>
-      </table>
-    <button (click)="editar(aluno)">Editar</button>
-    <button (click)="excluir('aluno._id')">Excluir</button>
- </tbody>
+  <thead>
+    <tr>
+      <th>Código</th>
+      <th>Nome</th>
+      <th>Curso</th>
+      <th>Sexo</th>
+      <th>Ações</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let aluno of alunos">
+      <td>{{ aluno.codaluno }}</td>
+      <td>{{ aluno.nomealuno }}</td>
+      <td>{{ aluno.curso }}</td>
+      <td>{{ aluno.sexo }}</td>
+      <td>
+        <button (click)="editar(aluno)">Editar</button>
+        <button (click)="excluir('Aluno._id')">Excluir</button> 
+      </td>
+    </tr>
+  </tbody>
 </table>

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { AlunoService, Aluno } from '../../services/aluno.service';
+import { Aluno, AlunoService } from '../../services/aluno.service'; 
 import { ActivatedRoute } from '@angular/router';
 
 @Component({
@@ -8,12 +8,7 @@ import { ActivatedRoute } from '@angular/router';
   styleUrls: ['./lista-aluno.component.css']
 })
 export class ListaAlunoComponent implements OnInit {
-  aluno: Aluno = {
-    codaluno: '',
-    nomealuno: '',
-    curso: '',
-    sexo: ''
-  };
+  alunos: Aluno[] = [];  // Mudança aqui para armazenar todos os alunos
 
   constructor(
     private alunoService: AlunoService,
@@ -21,29 +16,23 @@ export class ListaAlunoComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    const codaluno = this.route.snapshot.paramMap.get('codaluno');
-    if (codaluno) {
-      this.alunoService.getAluno(codaluno).subscribe((data: Aluno) => {
-        this.aluno = data;
-      });
-    } else {
-      console.error("Parâmetro 'codaluno' não encontrado na URL.");
-    }
+    this.alunoService.getAlunos().subscribe((data: Aluno[]) => {
+      this.alunos = data;
+    });
   }
 
   excluir(codaluno: string): void {
     this.alunoService.deleteAluno(codaluno).subscribe(() => {
       console.log(`Aluno com código ${codaluno} excluído com sucesso.`);
+      // Após excluir, você pode atualizar a lista de alunos
+      this.ngOnInit();
     });
   }
 
   editar(aluno: Aluno): void {
-    if (this.aluno.codaluno === aluno.codaluno) {
-      this.aluno.nomealuno = aluno.nomealuno;
-      this.aluno.curso = aluno.curso;
-      this.aluno.sexo = aluno.sexo;
-
-      console.log(`Aluno atualizado: ${JSON.stringify(this.aluno)}`);
+    if (this.alunos.some(a => a.codaluno === aluno.codaluno)) {
+      // Lógica para editar aluno
+      console.log(`Aluno atualizado: ${JSON.stringify(aluno)}`);
     } else {
       console.log('Aluno não encontrado!');
     }

@@ -8,14 +8,9 @@ import { ActivatedRoute, Router } from '@angular/router';
   styleUrl: './lista-cursos.component.css'
 })
 export class ListaCursosComponent {
+  cursos: Curso[] = [];
+  
 
-  Curso: Curso = {
-    codcurso: '',
-    nomecurso: '',
-    descricao: '',
-    cargaS: '',
-    disciplinas: ''
-};
 
   constructor(
     private CursoService: CursoService,
@@ -23,14 +18,9 @@ export class ListaCursosComponent {
   ) {}
 
   ngOnInit(): void {
-    const codcurso = this.route.snapshot.paramMap.get('codcurso');
-    if (codcurso) {
-      this.CursoService.getCurso(codcurso).subscribe((data: Curso) => {
-        this.Curso = data;
-      });
-    } else {
-      console.error("Parâmetro 'codcurso' não encontrado na URL.");
-    }
+    this.CursoService.getCursos().subscribe((data: Curso[]) => {
+      this.cursos = data;
+    });
   }
 
   excluir(codcurso: string): void {
@@ -39,18 +29,15 @@ export class ListaCursosComponent {
     });
   }
 
-  editar(Curso: Curso): void {
-    if (this.Curso.codcurso === Curso.codcurso) {
-        this.Curso.nomecurso = Curso.nomecurso;
-        this.Curso.descricao = Curso.descricao;
-        this.Curso.cargaS = Curso.cargaS;
-        this.Curso.disciplinas = Curso.disciplinas;
-
-      console.log(`Curso atualizado: ${JSON.stringify(this.Curso)}`);
+  editar(cursos: Curso): void {
+    if (this.cursos.some(a => a.codcurso === cursos.codcurso)) {
+      console.log(`curso atualizado: ${JSON.stringify(this.cursos)}`);
     } else {
-      console.log('Curso não encontrado!');
+      console.log('curso não encontrado!');
     }
   }
 }
+
+
 
 

@@ -9,13 +9,8 @@ import { Disciplina, DisciplinasService } from '../../services/disciplinas.servi
 })
 export class ListaDisciplinasComponent implements OnInit {
 
-  Disciplina: Disciplina = {
-    coddisciplina: '',
-    nomedisciplina: '',
-    ementa: '',
-    Carga_horaria: '',
-    professores: '',
-  };
+  disciplinas: Disciplina[] = [];
+  
 
   constructor(
     private DisciplinasService: DisciplinasService,
@@ -23,40 +18,25 @@ export class ListaDisciplinasComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    const coddisciplina = this.route.snapshot.paramMap.get('coddisciplina');
-    if (coddisciplina) {
-      console.log(`Parâmetro coddisciplina encontrado: ${coddisciplina}`);
-      this.DisciplinasService.getDisciplinas(coddisciplina).subscribe(
-        (data: Disciplina) => {
-          console.log('Dados da disciplina recebidos:', data);
-          this.Disciplina = data;
-        },
-        (error) => {
-          console.error('Erro ao buscar disciplina:', error);
-        }
-      );
-    } else {
-      console.error("Parâmetro 'coddisciplina' não encontrado na URL.");
-    }
+
+    this.DisciplinasService.getDisciplinas().subscribe((data: Disciplina[] ) => {
+      this.disciplinas = data;
+    });
   }
   
   excluir(coddisciplina: string): void {
     this.DisciplinasService.deleteDisciplinas(coddisciplina).subscribe(() => {
       console.log(`Disciplina com código ${coddisciplina} excluído com sucesso.`);
+      
     });
   }
 
-  editar(coddisciplina: Disciplina): void {
+  editar(disciplinas: Disciplina): void {
 
-    if (this.Disciplina.coddisciplina === this.Disciplina.coddisciplina) {
-        this.Disciplina.nomedisciplina = this.Disciplina.nomedisciplina;
-        this.Disciplina.ementa = this.Disciplina.ementa;
-        this.Disciplina.Carga_horaria = this.Disciplina.Carga_horaria;
-        this.Disciplina.professores = this.Disciplina.professores;
-        console.log(`Disciplina atualizado: ${JSON.stringify(this.Disciplina)}`);
-      } else {
-        console.log('Disciplina não encontrado!');
-
+    if (this.disciplinas.some(a => a.coddisciplina === disciplinas.coddisciplina)) {
+      console.log(`disciplinas atualizado: ${JSON.stringify(this.disciplinas)}`);
+    } else {
+      console.log('disciplinas não encontrado!');
     }
   }
 }

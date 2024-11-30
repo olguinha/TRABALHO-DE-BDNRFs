@@ -3,7 +3,8 @@ import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
 export interface Curso {
-  codcurso: String,
+
+    codcurso: String,
     nomecurso: String,
     descricao: String,
     cargaS: String,
@@ -15,7 +16,7 @@ export interface Curso {
 })
 
 export class CursoService {
-  private apiUrl = 'http://localhost:3000/alunos';
+  private apiUrl = 'http://localhost:4000/cursos';
 
   constructor(private http: HttpClient) {}
 
@@ -23,8 +24,9 @@ export class CursoService {
     return this.http.get<Curso>(`${this.apiUrl}/${codcurso}`);
   }
 
-  getCursos(codcurso: string): Observable<Curso[]> {
+  getCursos(): Observable<Curso[]> {
     return this.http.get<Curso[]>(this.apiUrl);
+    
   }
 
   createCurso(curso: Curso): Observable<Curso> {
@@ -35,9 +37,11 @@ export class CursoService {
     return this.http.put<Curso>(`${this.apiUrl}/${curso.codcurso}`, curso);
   }
 
+
   deleteCurso(id: string): Observable<any> {
     return this.http.delete(`${this.apiUrl}/${id}`);
   }
+  
 }
 
 

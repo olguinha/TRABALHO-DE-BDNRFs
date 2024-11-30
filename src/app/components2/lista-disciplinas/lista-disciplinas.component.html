@@ -1,25 +1,26 @@
 <h2>Lista das Disciplinas</h2>
 <table>
-        <thead>
-        <tr>
-        <th>Código</th>
-        <th>Nome</th>
-        <th>Ementa</th>
-        <th>Carga Horaria</th>
-        <th>Professores</th>
-        </tr>
-        </thead>
- <tbody>
-    <table>
-        <tr *ngFor="let Disciplina">
-          <td>{{ Disciplina.coddisciplina }}</td>
-          <td>{{ Disciplina.nomedisciplina }}</td>
-          <td>{{ Disciplina.ementa }}</td>
-          <td>{{ Disciplina.Carga_horaria}}</td>
-          <td>{{ Disciplina.professores}}</td>
-        </tr>
-      </table>
-    <button (click)="editar(Disciplina)">Editar</button>
-    <button (click)="excluir('Disciplina._id')">Excluir</button>
- </tbody>
+  <thead>
+    <tr>
+      <th>Código</th>
+      <th>Nome</th>
+      <th>Ementa</th>
+      <th>Carga Horária</th>
+      <th>Professores</th>
+      <th>Ações</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let disciplina of disciplinas">
+      <td>{{ disciplina.coddisciplina }}</td>
+      <td>{{ disciplina.nomedisciplina }}</td>
+      <td>{{ disciplina.ementa }}</td>
+      <td>{{ disciplina.Carga_horaria }}</td>
+      <td>{{ disciplina.professores }}</td>
+      <td>
+        <button (click)="editar(disciplina)">Editar</button>
+        <button (click)="excluir('disciplina_id')">Excluir</button>
+      </td>
+    </tr>
+  </tbody>
 </table>

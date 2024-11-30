@@ -15,12 +15,17 @@ export interface Disciplina {
 
 export class DisciplinasService {
 
-  private apiUrl = 'http://localhost:3000/disciplinas';
+  private apiUrl = 'http://localhost:5000/disciplinas';
 
   constructor(private http: HttpClient) {}
 
-  getDisciplinas(coddisciplina: string): Observable<Disciplina> {
-    return this.http.get<Disciplina>(`URL_DA_API/${coddisciplina}`);
+  getDisciplina(coddisciplina: string): Observable<Disciplina> {
+    return this.http.get<Disciplina>(`${this.apiUrl}/${coddisciplina}`);
+  }
+
+  getDisciplinas(): Observable<Disciplina[]> {
+    return this.http.get<Disciplina[]>(this.apiUrl);
+    
   }
 
   createDisciplinas(disciplinas: Disciplina): Observable<Disciplina> {
