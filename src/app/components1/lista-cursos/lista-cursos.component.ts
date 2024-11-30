@@ -9,8 +9,6 @@ import { ActivatedRoute, Router } from '@angular/router';
 })
 export class ListaCursosComponent {
   cursos: Curso[] = [];
-  
-
 
   constructor(
     private CursoService: CursoService,

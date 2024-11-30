@@ -8,7 +8,7 @@ export interface Curso {
     nomecurso: String,
     descricao: String,
     cargaS: String,
-    disciplinas:String
+    disciplinas: String
 }
 
 @Injectable({
@@ -16,7 +16,7 @@ export interface Curso {
 })
 
 export class CursoService {
-  private apiUrl = 'http://localhost:4000/cursos';
+  private apiUrl = 'http://localhost:3000/cursos';
 
   constructor(private http: HttpClient) {}
 
@@ -24,9 +24,8 @@ export class CursoService {
     return this.http.get<Curso>(`${this.apiUrl}/${codcurso}`);
   }
 
-  getCursos(): Observable<Curso[]> {
+  getAlunos(): Observable<Curso[]> { 
     return this.http.get<Curso[]>(this.apiUrl);
-    
   }
 
   createCurso(curso: Curso): Observable<Curso> {

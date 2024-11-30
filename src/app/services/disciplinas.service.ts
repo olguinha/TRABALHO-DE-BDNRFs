@@ -23,7 +23,7 @@ export class DisciplinasService {
     return this.http.get<Disciplina>(`${this.apiUrl}/${coddisciplina}`);
   }
 
-  getDisciplinas(): Observable<Disciplina[]> {
+  getDisciplinas(coddisciplina: string): Observable<Disciplina[]> {
     return this.http.get<Disciplina[]>(this.apiUrl);
     
   }
